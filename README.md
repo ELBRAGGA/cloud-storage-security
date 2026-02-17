@@ -42,7 +42,6 @@ A console-based cloud storage system built with C++17 that demonstrates core clo
 ## 📋 Prerequisites
 
 - C++17 compatible compiler (g++, clang, or MSVC)
-- CMake (optional, for building)
 
 ## 🔧 Installation & Build
 
