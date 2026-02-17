@@ -1,31 +1,59 @@
 # Secure Cloud Storage Simulator
 
-A console-based cloud storage system with security features, written in C++17.  
-This project demonstrates authentication, role-based access control, file metadata management, and security best practices relevant to cloud security engineering.
+[![C++](https://img.shields.io/badge/C++-17-blue)](https://isocpp.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Features
-- **User Registration** with salted SHA‑256 password hashing.
-- **Login with Account Lockout** after 5 failed attempts.
-- **Multi‑Factor Authentication (MFA)** simulation.
-- **Role‑Based Storage Limits**: Free (1 GB), Premium (10 GB), Admin (100 GB).
-- **File Management**: Upload, list, search, delete files with metadata (region, type, encryption flag).
-- **Data Residency Selection**: Asia, Europe, America, Global.
-- **Audit Logging** of all security‑related events.
-- **Admin Dashboard**: View users, unlock accounts, see security metrics.
+A console-based cloud storage system built with C++17 that demonstrates core cloud security engineering concepts including authentication, authorization, encryption, and audit logging.
 
-## Technologies Used
-- C++17 (std::filesystem, std::random, etc.)
-- SHA‑256 (via CommonCrypto on macOS, self‑contained on other platforms)
-- Console UI with input validation
+## 🚀 Features
 
-## How to Build
-### On macOS (with Xcode)
-1. Open Xcode and create a new Command Line Tool project.
-2. Replace the contents of `main.cpp` with the provided source.
-3. Set **C++ Language Dialect** to C++17 (Build Settings → C++ Language Dialect).
-4. Build and run (⌘R).
+### 🔐 Security
+- **Salted SHA-256 password hashing** – Secure password storage with unique salts
+- **Account lockout** – Automatic lockout after 5 failed login attempts
+- **Multi-factor authentication (MFA)** – 6-digit code simulation
+- **Audit logging** – All security events logged with timestamps
+- **Role-based access control** – Free, Premium, and Admin roles with different storage limits
 
-### On Linux / Other Platforms
-Compile with:
+### ☁️ Cloud Storage
+- **File management** – Upload, list, search, and delete files
+- **Data residency** – Choose storage region (Asia, Europe, America, Global)
+- **Storage quotas** – 1GB Free, 10GB Premium, 100GB Admin
+- **File metadata** – Type detection, descriptions, public/private flags
+- **Encryption flag** – Simulated "encrypt at rest" option
+
+### 👤 User Management
+- **Registration** – With password strength validation
+- **Profile management** – View and update security settings
+- **MFA toggle** – Enable/disable multi-factor authentication
+- **Storage usage monitor** – Visual progress bar
+
+### 👑 Admin Features
+- **User overview** – List all users with their roles and status
+- **Account management** – Unlock locked accounts
+- **Security dashboard** – View system-wide metrics
+
+## 🛠️ Technologies Used
+
+- **C++17** – Modern C++ features (filesystem, random, etc.)
+- **SHA-256** – Cryptographic hashing (CommonCrypto on macOS)
+- **File I/O** – Persistent storage for users and file metadata
+- **STL** – Vectors, maps, algorithms, string manipulation
+
+## 📋 Prerequisites
+
+- C++17 compatible compiler (g++, clang, or MSVC)
+- CMake (optional, for building)
+
+## 🔧 Installation & Build
+
+### macOS (with Xcode)
 ```bash
-g++ -std=c++17 main.cpp -o cloud_app -lstdc++fs
+# Clone the repository
+git clone https://github.com/ELBRAGGA/cloud-storage-security.git
+cd cloud-storage-security
+
+# Compile
+g++ -std=c++17 cloud_storage.cpp -o cloud_app
+
+# Run
+./cloud_app
