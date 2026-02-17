@@ -1,3 +1,4 @@
+```
 # Secure Cloud Storage Simulator
 
 [![C++](https://img.shields.io/badge/C++-17-blue)](https://isocpp.org/)
@@ -47,12 +48,53 @@ A console-based cloud storage system built with C++17 that demonstrates core clo
 
 ### macOS (with Xcode)
 ```bash
-# Clone the repository
 git clone https://github.com/ELBRAGGA/cloud-storage-security.git
 cd cloud-storage-security
-
-# Compile
 g++ -std=c++17 cloud_storage.cpp -o cloud_app
-
-# Run
 ./cloud_app
+```
+
+### Linux
+```bash
+g++ -std=c++17 cloud_storage.cpp -o cloud_app -lstdc++fs
+./cloud_app
+```
+
+### Windows (with MinGW)
+```bash
+g++ -std=c++17 cloud_storage.cpp -o cloud_app.exe -lstdc++fs
+cloud_app.exe
+```
+
+## 🎮 How to Use
+
+1. Run the application: `./cloud_app`
+2. Main Menu Options: 1=Login, 2=Create account, 3=Exit
+
+## 📁 Project Structure
+
+```
+cloud-storage-security/
+├── cloud_storage.cpp          # Main source code
+├── README.md                   # This file
+├── cloud_users.dat             # User database (auto-generated)
+├── cloud_data/                  # File metadata (auto-generated)
+│   └── [username].dat           # Per-user file records
+└── cloud_system.log             # Audit log (auto-generated)
+```
+
+## 🔒 Security Features Explained
+
+| Feature | Implementation | Purpose |
+|---------|---------------|---------|
+| Password Hashing | SHA-256 with 16-byte random salt | Prevents password recovery from database |
+| Account Lockout | 5 failed attempts → locked | Prevents brute-force attacks |
+| MFA | 6-digit code simulation | Adds second factor of authentication |
+| RBAC | Free/Premium/Admin roles | Enforces least privilege principle |
+| Audit Logging | All security events logged | Provides traceability and forensics |
+
+## 📬 Contact
+
+**Yahya Elbragga**  
+GitHub: [@ELBRAGGA](https://github.com/ELBRAGGA)  
+Project Link: [https://github.com/ELBRAGGA/cloud-storage-security](https://github.com/ELBRAGGA/cloud-storage-security)
